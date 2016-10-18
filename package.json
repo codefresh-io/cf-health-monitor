@@ -1,0 +1,17 @@
+{
+  "name": "cf-health-monitor",
+  "version": "1.0.0",
+  "description": "Codefresh health monitor service",
+  "main": "index.js",
+  "scripts": {
+    "test": "ls -l node_modules && echo OK",
+    "start": "node index.js"
+  },
+  "author": "Codefresh",
+  "license": "ISC",
+  "dependencies": {
+    "consul": "^0.25.0",
+    "express": "^4.13.4",
+    "q": "^1.4.1"
+  }
+}
