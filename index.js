@@ -13,7 +13,10 @@ app.use('/', router);
 router.get('/failed', function(req, res) {
     //getDockerInfo().then( dockerInfo => res.send(dockerInfo) );
     consulMonitor.getHealthStatus().done( healthStatus => res.send(healthStatus),
-                                          err => res.status(400).send(err));
+                                          err => {
+                                              res.statusMessage = JSON.stringify(err);
+                                              res.status(400).end()
+                                          });
 });
 
 
